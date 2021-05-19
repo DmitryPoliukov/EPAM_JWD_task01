@@ -1,10 +1,13 @@
+/*Ддет n-я секунда суток, определить, сколько полных часов, полных минут и секунд прошло к этому
+моменту
+ */
 package Tasks01.Task7;
 
 import Tasks01.Scanners.Scanners;
 
 public class Solution {
 
-    public static Point readingPointA(){
+    public static Point readingPointA() {
         System.out.println("Введите координату х точки А");
         double aX = Scanners.doubleScanner();
         System.out.println("Введите координату y точки А");
@@ -12,7 +15,7 @@ public class Solution {
         return new Point(aX, aY);
     }
 
-    private static Point readingPointB(){
+    private static Point readingPointB() {
         System.out.println("Введите координату х точки B");
         double bX = Scanners.doubleScanner();
         System.out.println("Введите координату y точки B");
@@ -20,21 +23,15 @@ public class Solution {
         return new Point(bX, bY);
     }
 
-    private static double distance(double x, double y){
+    private static double distance(double x, double y) {
         return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
     }
 
-    private static int compare(double distanceA, double distanceB){
-        if(distanceA < distanceB){
-            return 1;
-        }
-        else if (distanceA == distanceB){
-            return 0;
-        }
-        else return -1;
+    private static int compare(double distanceA, double distanceB) {
+        return Double.compare(distanceB, distanceA);
     }
 
-    private static void printingResult(int compareNumber){
+    private static void printingResult(int compareNumber) {
         switch (compareNumber){
             case 1:
                 System.out.println("Точка А ближе к началу координат");
@@ -55,11 +52,5 @@ public class Solution {
         double distanceB = distance(B.getX(), B.getY());
         int compareNumber = compare(distanceA, distanceB);
         printingResult(compareNumber);
-
-
-
-
-
     }
-
 }

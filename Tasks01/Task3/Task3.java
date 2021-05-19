@@ -1,15 +1,23 @@
+/*Окружность вписана в квадрат заданной площади. Найти площадь квадрата, вписанного в эту
+окружность. Во сколько раз площадь вписанного квадрата меньше площади заданного?
+ */
+
 package Tasks01.Task3;
 
 import Tasks01.Scanners.Scanners;
 
 public class Task3 {
 
-    private static double readingArea(){
-        System.out.println("Введите значение площади квадрата:");
-        return Scanners.doubleScanner();
+    private static double readingArea() {
+        while (true) {
+            System.out.println("Введите значение площади квадрата:");
+            if (Scanners.doubleScanner() > 0) {
+                return Scanners.doubleScanner();
+            } else System.out.println("Некорректное значение.");
+        }
     }
 
-    private static double secondArea(double firstArea){
+    private static double secondArea(double firstArea) {
         double radius = Math.sqrt(firstArea) / 2;
         return 2 * Math.pow(radius, 2);
     }

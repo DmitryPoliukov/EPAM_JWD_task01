@@ -1,6 +1,12 @@
+/* Составить программу, которая по заданным году и номеру месяца определяет количество дней в этом
+месяце и корректно определялись все високосные года.
+ */
+
 package Tasks01.Task2;
 
 import Tasks01.Scanners.Scanners;
+
+import java.util.InputMismatchException;
 
 public class Task2 {
 
@@ -8,7 +14,12 @@ public class Task2 {
         int year = -1;
         while (year < 0) {
             System.out.println("Введите год:");
-            year = Scanners.intScanner();
+            try {
+                year = Scanners.intScanner();
+            }
+            catch (InputMismatchException e){
+                System.out.println("Некооректное значение.");
+            }
             if (year < 0) {
                 System.out.println("Некооректное значение.");
             }
@@ -17,7 +28,7 @@ public class Task2 {
     }
 
     private static int validationOfMonth() {
-        int month = 0;
+        int month;
         while (true) {
             System.out.println("Введите номер месяца:");
             month = Scanners.intScanner();
@@ -28,11 +39,10 @@ public class Task2 {
     }
 
     private static boolean isLeap(int year) {
-        /// разобраться   return (year % 4 == 0) && (!(year % 100 == 0) || (year % 400 == 0));
-        return false;
+        return ((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0)));
     }
 
-    private static int daysInMonth(int validMonth, int validYear){
+    private static int daysInMonth(int validMonth, int validYear) {
         int[] days = new int[] {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
         if(isLeap(validYear)){
             days[1] = 29;

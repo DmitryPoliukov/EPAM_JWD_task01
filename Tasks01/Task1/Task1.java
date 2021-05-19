@@ -10,11 +10,11 @@ import Tasks01.Scanners.Scanners;
 import java.util.InputMismatchException;
 
 public class Task1 {
-    private static int lastDigit(int a){
+    private static int lastDigit(int a) {
         return a % 10;
     }
 
-    private static int lastDigitOfSquare(int b){
+    private static int lastDigitOfSquare(int b) {
         return (int) (Math.pow(b, 2) % 10);
     }
 
@@ -24,6 +24,7 @@ public class Task1 {
             try {
                 int a = Scanners.intScanner();
                 System.out.println("Последняя цифра квадрата числа: " + lastDigitOfSquare(lastDigit(a)));
+                break;
             } catch (InputMismatchException e) {
                 System.out.println("Некорректное значение.");
             }

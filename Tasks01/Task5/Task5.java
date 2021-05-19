@@ -1,3 +1,8 @@
+/*Составить программу, печатающую значение true, если указанное высказывание является истинным, и
+false — в противном случае: является ли целое число совершенным (сумма делителей равна самому
+числу).
+ */
+
 package Tasks01.Task5;
 
 import Tasks01.Scanners.Scanners;
@@ -9,8 +14,7 @@ public class Task5 {
         while (true) {
             try {
                 System.out.println("Введите целое число:");
-                int a = Scanners.intScanner();
-                return a;
+                return Scanners.intScanner();
             } catch (InputMismatchException e) {
                 System.out.println("Некорректное значение.");
             }
@@ -26,8 +30,6 @@ public class Task5 {
         }
         return sum == a;
     }
-
-
 
     public static void main(String[] args) {
         int validNumber = readingNumber();
