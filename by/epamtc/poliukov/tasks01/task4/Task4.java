@@ -2,29 +2,21 @@
 false — в противном случае: среди заданных целых чисел А, В, С, D есть хотя бы два четных.
  */
 
-package Tasks01.Task4;
+package by.epamtc.poliukov.tasks01.task4;
 
-import Tasks01.Scanners.Scanners;
-
-import java.util.InputMismatchException;
+import by.epamtc.poliukov.tasks01.custom_scanner.CustomScanner;
 
 public class Task4 {
-    private static double[] readingArray() {
-        while (true) {
+    private double[] readingArray() {
             System.out.println("Введите четыре числа:");
-            try {
-                double[] arrayOfDouble = new double[4];
-                for (int i = 0; i < 4; i++) {
-                    arrayOfDouble[i] = Scanners.doubleScanner();
-                }
-                return arrayOfDouble;
-            } catch (InputMismatchException e) {
-                System.out.println("Некорректное значение");
+            double[] arrayOfDouble = new double[4];
+            for (int i = 0; i < 4; i++) {
+                arrayOfDouble[i] = CustomScanner.doubleScanner();
             }
-        }
+            return arrayOfDouble;
     }
 
-    private static boolean result(double[] arr){
+    private boolean result(double[] arr) {
         int counter = 0;
         for (int i = 0; i < 4; i++){
             if(arr[i] % 2 == 0){
@@ -34,7 +26,7 @@ public class Task4 {
         return counter > 1;
     }
 
-    public static void main(String[] args) {
+    public void execute() {
         double[] arr = readingArray();
         System.out.println(result(arr));
     }

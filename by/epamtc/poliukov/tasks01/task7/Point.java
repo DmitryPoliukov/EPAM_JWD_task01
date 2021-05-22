@@ -1,4 +1,4 @@
-package Tasks01.Task7;
+package by.epamtc.poliukov.tasks01.task7;
 
 public class Point {
     double x;

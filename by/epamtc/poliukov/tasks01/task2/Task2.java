@@ -2,24 +2,17 @@
 месяце и корректно определялись все високосные года.
  */
 
-package Tasks01.Task2;
+package by.epamtc.poliukov.tasks01.task2;
 
-import Tasks01.Scanners.Scanners;
-
-import java.util.InputMismatchException;
+import by.epamtc.poliukov.tasks01.custom_scanner.CustomScanner;
 
 public class Task2 {
 
-    private static int validationOfYear() {
+    private int validationOfYear() {
         int year = -1;
         while (year < 0) {
             System.out.println("Введите год:");
-            try {
-                year = Scanners.intScanner();
-            }
-            catch (InputMismatchException e){
-                System.out.println("Некооректное значение.");
-            }
+            year = CustomScanner.intScanner();
             if (year < 0) {
                 System.out.println("Некооректное значение.");
             }
@@ -27,22 +20,23 @@ public class Task2 {
         return year;
     }
 
-    private static int validationOfMonth() {
+    private int validationOfMonth() {
         int month;
         while (true) {
             System.out.println("Введите номер месяца:");
-            month = Scanners.intScanner();
+            month = CustomScanner.intScanner();
             if (!(month > 0 & month <= 12)) {
                 System.out.println("Некорректное значение.");
             } else return month;
         }
     }
 
-    private static boolean isLeap(int year) {
-        return ((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0)));
+    private boolean isLeap(int year) {
+        boolean isLeap = (year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0));
+        return isLeap;
     }
 
-    private static int daysInMonth(int validMonth, int validYear) {
+    private int daysInMonth(int validMonth, int validYear) {
         int[] days = new int[] {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
         if(isLeap(validYear)){
             days[1] = 29;
@@ -51,10 +45,11 @@ public class Task2 {
     }
 
 
-    public static void main(String[] args) {
+    public void execute() {
         int validYear = validationOfYear();
         int validMonth = validationOfMonth();
         System.out.println(isLeap(validYear)? "Високосный год" : "Год невисикосный");
-        System.out.println("Количество дней в месяце: " + daysInMonth(validMonth, validYear));
+        int daysInMonth = daysInMonth(validMonth, validYear);
+        System.out.println("Количество дней в месяце: " + daysInMonth);
     }
 }

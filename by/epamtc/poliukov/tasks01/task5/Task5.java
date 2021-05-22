@@ -3,25 +3,17 @@ false — в противном случае: является ли целое �
 числу).
  */
 
-package Tasks01.Task5;
+package by.epamtc.poliukov.tasks01.task5;
 
-import Tasks01.Scanners.Scanners;
-
-import java.util.InputMismatchException;
+import by.epamtc.poliukov.tasks01.custom_scanner.CustomScanner;
 
 public class Task5 {
     private static int readingNumber() {
-        while (true) {
-            try {
-                System.out.println("Введите целое число:");
-                return Scanners.intScanner();
-            } catch (InputMismatchException e) {
-                System.out.println("Некорректное значение.");
-            }
+         System.out.println("Введите целое число:");
+         return CustomScanner.intScanner();
         }
-    }
 
-    private static boolean isPerfectNumber(int a) {
+    private boolean isPerfectNumber(int a) {
         int sum = 0;
         for (int i = 1; i < a; i++) {
             if (a % i == 0) {
@@ -31,8 +23,9 @@ public class Task5 {
         return sum == a;
     }
 
-    public static void main(String[] args) {
+    public void execute() {
         int validNumber = readingNumber();
-        System.out.println(isPerfectNumber(validNumber));
+        boolean isPerfectNumber = isPerfectNumber(validNumber);
+        System.out.println(isPerfectNumber);
     }
 }

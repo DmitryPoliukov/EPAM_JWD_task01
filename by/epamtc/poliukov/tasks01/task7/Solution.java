@@ -1,37 +1,37 @@
 /*Ддет n-я секунда суток, определить, сколько полных часов, полных минут и секунд прошло к этому
 моменту
  */
-package Tasks01.Task7;
+package by.epamtc.poliukov.tasks01.task7;
 
-import Tasks01.Scanners.Scanners;
+import by.epamtc.poliukov.tasks01.custom_scanner.CustomScanner;
 
 public class Solution {
 
-    public static Point readingPointA() {
+    public  Point readingPointA() {
         System.out.println("Введите координату х точки А");
-        double aX = Scanners.doubleScanner();
+        double xPointA = CustomScanner.doubleScanner();
         System.out.println("Введите координату y точки А");
-        double aY = Scanners.doubleScanner();
-        return new Point(aX, aY);
+        double yPointA = CustomScanner.doubleScanner();
+        return new Point(xPointA, yPointA);
     }
 
-    private static Point readingPointB() {
+    private Point readingPointB() {
         System.out.println("Введите координату х точки B");
-        double bX = Scanners.doubleScanner();
+        double xPointB = CustomScanner.doubleScanner();
         System.out.println("Введите координату y точки B");
-        double bY = Scanners.doubleScanner();
-        return new Point(bX, bY);
+        double yPointB = CustomScanner.doubleScanner();
+        return new Point(xPointB, yPointB);
     }
 
-    private static double distance(double x, double y) {
+    private double distance(double x, double y) {
         return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
     }
-
-    private static int compare(double distanceA, double distanceB) {
+    // Слышал, что при сравнении надо возращать сам объект Point, но здесь же возможно равенство расстояний.
+    private int compare(double distanceA, double distanceB) {
         return Double.compare(distanceB, distanceA);
     }
 
-    private static void printingResult(int compareNumber) {
+    private void printingResult(int compareNumber) {
         switch (compareNumber){
             case 1:
                 System.out.println("Точка А ближе к началу координат");
@@ -45,11 +45,11 @@ public class Solution {
         }
     }
 
-    public static void main(String[] args) {
-        Point A = readingPointA();
-        Point B = readingPointB();
-        double distanceA = distance(A.getX(),A.getY());
-        double distanceB = distance(B.getX(), B.getY());
+    public void execute() {
+        Point pointA = readingPointA();
+        Point pointB = readingPointB();
+        double distanceA = distance(pointA.getX(), pointA.getY());
+        double distanceB = distance(pointB.getX(), pointB.getY());
         int compareNumber = compare(distanceA, distanceB);
         printingResult(compareNumber);
     }
