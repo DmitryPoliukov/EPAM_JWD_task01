@@ -6,29 +6,16 @@ import by.epamtc.poliukov.tasks01.custom_scanner.CustomScanner;
 
 public class Task9 {
 
-    private double readingR() {
-        while (true) {
-            System.out.println("Введите значение радиуса:");
-                double r = CustomScanner.doubleScanner();
-                if(r > 0){
-                    return r;
-                }
-                else System.out.println("Некорректное значение.");
-        }
+    public double readingR() {
+        double radius = CustomScanner.positiveDoubleScanner("Enter a value for the radius:");
+        return radius;
     }
 
-    private double calculatingLength(double r) {
-        return 2 * Math.PI * r;
+    public double calculatingLength(double radius) {
+        return 2 * Math.PI * radius;
     }
 
-    private double calculatingArea(double r) {
-        return Math.PI * Math.pow(r, 2);
-    }
-
-    public void execute() {
-        double radius = readingR();
-        double length = calculatingLength(radius);
-        double area = calculatingArea(radius);
-        System.out.printf("Длина окружности равна %.4f, площадь круга равна %.4f", length, area);
+    public double calculatingArea(double radius) {
+        return Math.PI * Math.pow(radius, 2);
     }
 }

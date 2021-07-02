@@ -9,24 +9,19 @@ import by.epamtc.poliukov.tasks01.custom_scanner.CustomScanner;
 
 public class Task8 {
 
-    private double readingX() {
-        System.out.println("Введите значение аргумента функции:");
-        return CustomScanner.doubleScanner();
+    public double readArgument() {
+        return CustomScanner.doubleScanner("Enter the value of the function argument:");
     }
 
-    private double calculation(double x) {
+    public double calculation(double argument) {
         double result;
-        if (x >= 3){
-            result = -Math.pow(x, 2) + 3 * x + 9;
+        if (argument >= 3){
+            result = -Math.pow(argument, 2) + 3 * argument + 9;
         }
         else {
-            result = (1 / (Math.pow(x, 3) - 6));
+            result = (1 / (Math.pow(argument, 3) - 6));
         }
         return result;
     }
 
-    public void execute() {
-        double function = calculation(readingX());
-        System.out.printf("Значение функции равно %.3f", function);
-    }
 }

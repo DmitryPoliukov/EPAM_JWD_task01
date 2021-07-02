@@ -7,16 +7,16 @@ package by.epamtc.poliukov.tasks01.task4;
 import by.epamtc.poliukov.tasks01.custom_scanner.CustomScanner;
 
 public class Task4 {
-    private double[] readingArray() {
-            System.out.println("Введите четыре числа:");
-            double[] arrayOfDouble = new double[4];
-            for (int i = 0; i < 4; i++) {
-                arrayOfDouble[i] = CustomScanner.doubleScanner();
-            }
-            return arrayOfDouble;
+
+    public double[] readingArray() {
+        double[] arrayOfDouble = new double[4];
+        for (int i = 0; i < 4; i++) {
+            arrayOfDouble[i] = CustomScanner.doubleScanner("");
+        }
+        return arrayOfDouble;
     }
 
-    private boolean result(double[] arr) {
+    public boolean result(double[] arr) {
         int counter = 0;
         for (int i = 0; i < 4; i++){
             if(arr[i] % 2 == 0){
@@ -24,10 +24,5 @@ public class Task4 {
             }
         }
         return counter > 1;
-    }
-
-    public void execute() {
-        double[] arr = readingArray();
-        System.out.println(result(arr));
     }
 }

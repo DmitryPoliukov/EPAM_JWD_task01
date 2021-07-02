@@ -8,56 +8,32 @@ package by.epamtc.poliukov.tasks01.task10;
 
 import by.epamtc.poliukov.tasks01.custom_scanner.CustomScanner;
 
+import java.util.Map;
+import java.util.TreeMap;
+
 public class Task10 {
-    private double first;
-    private double last;
-    private double step;
 
-    private void initInterval() {
-    initFirst();
-    initLast();
-    initStep();
+    double initFirst() {
+        double first = CustomScanner.doubleScanner("Enter the starting value for the spacing in radians:");
+        return first;
     }
 
-    private void initFirst() {
-        System.out.println("Введите начальное значение интервала в радианах:");
-        first = CustomScanner.doubleScanner();
+    double initLast(double first) {
+        double last = CustomScanner.doubleInRangeScanner("Enter the end of the interval in radians:",
+                first, Double.MAX_VALUE );
+        return last;
     }
 
-    private void initLast() {
-        boolean isValidLast = false;
-        do {
-            System.out.println("Введите значение конца интервала в радианах:");
-            last = CustomScanner.doubleScanner();
-            if(last <= first) {
-                System.out.println("Некорректное значение.");
-            }
-            else isValidLast = true;
-            }
-        while (!isValidLast);
+    double initStep() {
+        double step = CustomScanner.positiveDoubleScanner("Enter the step value in radians:");
+        return step;
     }
 
-    private void initStep() {
-        boolean isValidStep = false;
-        while(!isValidStep) {
-            System.out.println("Введите значение шага в радианах:");
-            step = CustomScanner.doubleScanner();
-            if(step > 0) {
-                isValidStep = true;
-            }
-                else System.out.println("Некорректное значение.");
-        }
-    }
-
-    private void printingResults() {
-        System.out.println("Угол в радианах:   Значение тангенса:");
+    Map<Double, Double> calculation(double first, double last, double step) {
+        Map<Double, Double> resultTangent = new TreeMap<>();
         for(; first <= last; first += step){
-        System.out.printf("%.2f                 %.4f", first, Math.tan(first));
+            resultTangent.put(first, Math.tan(first));
         }
-    }
-
-    public void execute() {
-    initInterval();
-    printingResults();
+        return resultTangent;
     }
 }

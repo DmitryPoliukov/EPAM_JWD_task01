@@ -8,24 +8,18 @@ package by.epamtc.poliukov.tasks01.task5;
 import by.epamtc.poliukov.tasks01.custom_scanner.CustomScanner;
 
 public class Task5 {
-    private static int readingNumber() {
-         System.out.println("Введите целое число:");
-         return CustomScanner.intScanner();
+
+    public int readPositiveNumber() {
+         return CustomScanner.positiveIntScanner("Enter a positive integer:");
         }
 
-    private boolean isPerfectNumber(int a) {
+    public boolean isPerfectNumber(int number) {
         int sum = 0;
-        for (int i = 1; i < a; i++) {
-            if (a % i == 0) {
+        for (int i = 1; i < number / 2; i++) {
+            if (number % i == 0) {
                 sum += i;
             }
         }
-        return sum == a;
-    }
-
-    public void execute() {
-        int validNumber = readingNumber();
-        boolean isPerfectNumber = isPerfectNumber(validNumber);
-        System.out.println(isPerfectNumber);
+        return sum == number;
     }
 }
