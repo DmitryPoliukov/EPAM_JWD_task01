@@ -2,7 +2,7 @@ package by.epamtc.poliukov.tasks01.task2;
 
 public class Runner {
     public static void main(String[] args) {
-        Task2 task2 = new Task2();
+        DaysInMonth task2 = new DaysInMonth();
 
         int year = task2.readYear();
         int month = task2.readMonth();

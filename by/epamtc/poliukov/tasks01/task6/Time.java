@@ -5,7 +5,7 @@ package by.epamtc.poliukov.tasks01.task6;
 
 import by.epamtc.poliukov.tasks01.custom_scanner.CustomScanner;
 
-public class Task6 {
+public class Time {
 
     public int readSec() {
         int secondsInDay = 86400;

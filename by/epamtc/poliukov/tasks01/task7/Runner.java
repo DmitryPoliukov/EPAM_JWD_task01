@@ -2,7 +2,7 @@ package by.epamtc.poliukov.tasks01.task7;
 
 public class Runner {
     public static void main(String[] args) {
-        Solution task7 = new Solution();
+        NearestPoint task7 = new NearestPoint();
 
         Point pointA = task7.readingPointA();
         Point pointB = task7.readingPointB();

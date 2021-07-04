@@ -5,7 +5,7 @@ package by.epamtc.poliukov.tasks01.task7;
 
 import by.epamtc.poliukov.tasks01.custom_scanner.CustomScanner;
 
-public class Solution {
+public class NearestPoint {
 
     public  Point readingPointA() {
         double xPointA = CustomScanner.doubleScanner("Enter coordinate х point A");

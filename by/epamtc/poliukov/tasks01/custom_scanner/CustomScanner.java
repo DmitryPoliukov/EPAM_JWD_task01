@@ -62,22 +62,22 @@ public class CustomScanner {
             positiveIntScanner.next();
         }
         int data = positiveIntScanner.nextInt();
-        if(data < 0) {
+        if(data <= 0) {
             System.out.println("Invalid value");
             data = positiveIntScanner(message);
         }
         return data;
     }
 
-    public static int positiveDoubleScanner(String message) {
+    public static double positiveDoubleScanner(String message) {
         Scanner positiveDoubleScanner = new Scanner(System.in);
         System.out.println(message);
         while(!positiveDoubleScanner.hasNextDouble()) {
             System.out.println("Please enter a real number.");
             positiveDoubleScanner.next();
         }
-        int data = positiveDoubleScanner.nextInt();
-        if(data < 0) {
+        double data = positiveDoubleScanner.nextDouble();
+        if(data <= 0) {
             System.out.println("Invalid value");
             data = positiveDoubleScanner(message);
         }

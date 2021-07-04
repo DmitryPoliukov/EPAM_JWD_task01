@@ -5,8 +5,9 @@
 
 package by.epamtc.poliukov.tasks01.task1;
 
-public class Task1 {
+public class LastDigitOfSquare {
     public int lastDigitOfSquare(int inputNumber) {
-        return (int) (Math.pow(inputNumber, 2) % 10);
+        int lasDigit = (int) (Math.pow(inputNumber, 2) % 10);
+        return lasDigit;
     }
 }

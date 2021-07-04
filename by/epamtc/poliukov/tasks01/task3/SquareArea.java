@@ -6,7 +6,7 @@ package by.epamtc.poliukov.tasks01.task3;
 
 import by.epamtc.poliukov.tasks01.custom_scanner.CustomScanner;
 
-public class Task3 {
+public class SquareArea {
     public double readArea() {
         double area = CustomScanner.positiveDoubleScanner("Enter a value for the area of the square");
         return area;

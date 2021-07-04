@@ -11,7 +11,7 @@ import by.epamtc.poliukov.tasks01.custom_scanner.CustomScanner;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class Task10 {
+public class CalculatorTangent {
 
     double initFirst() {
         double first = CustomScanner.doubleScanner("Enter the starting value for the spacing in radians:");

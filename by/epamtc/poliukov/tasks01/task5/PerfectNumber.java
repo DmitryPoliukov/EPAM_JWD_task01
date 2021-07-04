@@ -7,15 +7,18 @@ package by.epamtc.poliukov.tasks01.task5;
 
 import by.epamtc.poliukov.tasks01.custom_scanner.CustomScanner;
 
-public class Task5 {
+public class PerfectNumber {
 
-    public int readPositiveNumber() {
-         return CustomScanner.positiveIntScanner("Enter a positive integer:");
+    public int readIntNumber() {
+         return CustomScanner.intScanner("Enter an integer:");
         }
 
     public boolean isPerfectNumber(int number) {
+        if(number <= 0) {
+            return false;
+        }
         int sum = 0;
-        for (int i = 1; i < number / 2; i++) {
+        for (int i = 1; i <= (number / 2); i++) {
             if (number % i == 0) {
                 sum += i;
             }

@@ -2,10 +2,10 @@ package by.epamtc.poliukov.tasks01.task4;
 
 public class Runner {
     public static void main(String[] args) {
-        Task4 task4 = new Task4();
+        EvenNumbers evenNumbers = new EvenNumbers();
 
-        System.out.println("Enter four numbers:");
-        double[] arr = task4.readingArray();
-        System.out.println(task4.result(arr));
+        System.out.println("Enter four integers:");
+        int[] arr = evenNumbers.readingArray();
+        System.out.println(evenNumbers.result(arr));
     }
 }

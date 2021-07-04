@@ -6,7 +6,7 @@ package by.epamtc.poliukov.tasks01.task2;
 
 import by.epamtc.poliukov.tasks01.custom_scanner.CustomScanner;
 
-public class Task2 {
+public class DaysInMonth {
 
     public int readYear() {
         int year = CustomScanner.positiveIntScanner("Enter the year");
@@ -14,7 +14,7 @@ public class Task2 {
     }
 
     public int readMonth() {
-        int month = CustomScanner.intInRangeScanner("Enter the month number:", 0, 12);
+        int month = CustomScanner.intInRangeScanner("Enter the month number:", 1, 12);
         return month;
     }
 

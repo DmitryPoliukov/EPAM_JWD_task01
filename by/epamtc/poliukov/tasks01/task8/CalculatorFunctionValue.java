@@ -7,7 +7,7 @@ package by.epamtc.poliukov.tasks01.task8;
 
 import by.epamtc.poliukov.tasks01.custom_scanner.CustomScanner;
 
-public class Task8 {
+public class CalculatorFunctionValue {
 
     public double readArgument() {
         return CustomScanner.doubleScanner("Enter the value of the function argument:");

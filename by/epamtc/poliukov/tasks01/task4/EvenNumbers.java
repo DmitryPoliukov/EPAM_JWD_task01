@@ -6,17 +6,17 @@ package by.epamtc.poliukov.tasks01.task4;
 
 import by.epamtc.poliukov.tasks01.custom_scanner.CustomScanner;
 
-public class Task4 {
+public class EvenNumbers {
 
-    public double[] readingArray() {
-        double[] arrayOfDouble = new double[4];
+    public int[] readingArray() {
+        int[] arrayOfInt = new int[4];
         for (int i = 0; i < 4; i++) {
-            arrayOfDouble[i] = CustomScanner.doubleScanner("");
+            arrayOfInt[i] = CustomScanner.intScanner("");
         }
-        return arrayOfDouble;
+        return arrayOfInt;
     }
 
-    public boolean result(double[] arr) {
+    public boolean result(int[] arr) {
         int counter = 0;
         for (int i = 0; i < 4; i++){
             if(arr[i] % 2 == 0){
